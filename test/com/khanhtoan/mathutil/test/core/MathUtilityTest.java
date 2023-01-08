@@ -12,7 +12,7 @@ import org.junit.Test;
  *
  * @author admin
  */
-public class MathUtilityTest1 {
+public class MathUtilityTest {
     @Test
     public void testGetFactorialGivenRightArgumentReturnsWell() {
         int n = 0;  //test thu tinh huong dau vao, may phai chay dung
