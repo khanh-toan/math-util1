@@ -21,19 +21,40 @@ public class MathUtil {
     //20 giai thua 18 so 0, vua kip du cho kieu long cua Java
     //21 giai thua tran kieu long 
     //bai nay quy uoc tinh n! trong khoang tu 0...20
-    public static long getFactorial(int n){
+//    public static long getFactorial(int n){
+//        if(n < 0 || n > 20){
+//            throw new IllegalArgumentException("Invalid argument. N must be between 0...20");
+//        }   
+//        
+//        if(n == 0 || n == 1){
+//            return 1;   //ket thuc cuoc choi som neu nhan gia tri dac biet
+//        }
+//        
+//        long product = 1;   //tich nhan don , thuat toan con heo dat 
+//        for (int i = 2; i <= n; i++) {
+//            product *= i;
+//        }
+//        return product;
+//    }
+    
+    //Hoc lai de quy trong vong 30s - RECURSION
+    //Hien tuong goi la chinh minh voi 1 quy mo khác
+    //Ví du: búp be nguoi nga, giong nhau va long trong nhau
+    //bup be nho hon, nho hon, ...
+    
+    //tinh gium tui n!
+    //n! = 1.2.3.4.5.6. ... .n
+    
+    public static long getFactorial(int n){ 
+        
         if(n < 0 || n > 20){
-            throw new IllegalArgumentException("Invalid argument. N must be between 0...20");
-        }   
+            throw new IllegalArgumentException("n must be between 0 to 20, please");
+        }
         
         if(n == 0 || n == 1){
             return 1;   //ket thuc cuoc choi som neu nhan gia tri dac biet
         }
         
-        long product = 1;   //tich nhan don , thuat toan con heo dat 
-        for (int i = 2; i <= n; i++) {
-            product *= i;
-        }
-        return product;
+        return n * getFactorial(n - 1);
     }
 }
